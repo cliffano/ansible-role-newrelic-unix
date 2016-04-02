@@ -1,0 +1,3 @@
+---
+newrelic_unix_artifact_url: https://github.com/sschwartzman/newrelic-unix-plugin/blob/master/dist/newrelic_unix_plugin.tar.gz?raw=true
+newrelic_plugins_home: /tmp/newrelic-plugins/

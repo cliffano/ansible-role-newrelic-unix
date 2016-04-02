@@ -1,0 +1,13 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: cliffano
+  description: Ansible Role for setting up NewRelic Unix Plugin
+  company: "Studio Cliffano"
+  license: "license (MIT)"
+  min_ansible_version: 1.9.0
+  platforms:
+  - name: Ubuntu
+  categories:
+    - system

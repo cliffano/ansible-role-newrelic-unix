@@ -1,0 +1,21 @@
+---
+
+- name: Ensure NewRelic Unix plugins home directory exists
+  file: path={{ newrelic_plugins_home }} state=directory
+
+- name: Register NewRelic Unix Plugin home stat
+  stat: path={{ newrelic_plugins_home }}/newrelic_unix_plugin/
+  register: newrelic_unix_plugin_home
+
+- name: Download the latest version of the agent and gunzip & untar on Unix server that you want to monitor
+  unarchive: src={{ newrelic_unix_artifact_url }} dest={{ newrelic_plugins_home }} copy=no
+  when: newrelic_unix_plugin_home.stat.exists == False
+
+- name: Configure newrelic.json
+  template: src=newrelic.json.j2 dest={{ newrelic_plugins_home }}/newrelic_unix_plugin/config/newrelic.json mode=0644
+
+- name: Ensure the startup script is executable
+  file: path={{ newrelic_plugins_home }}/newrelic_unix_plugin/pluginctl.sh state=touch mode=0755
+
+- name: Run ./pluginctl.sh start from command-line
+  shell: ./pluginctl.sh restart chdir={{ newrelic_plugins_home }}/newrelic_unix_plugin/
