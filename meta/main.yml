@@ -8,6 +8,6 @@ galaxy_info:
   license: "license (MIT)"
   min_ansible_version: 1.9.0
   platforms:
-  - name: Ubuntu
+  - name: GenericUnix
   categories:
     - system
