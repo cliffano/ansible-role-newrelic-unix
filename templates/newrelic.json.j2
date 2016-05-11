@@ -1,7 +1,7 @@
 {
     "license_key": "{{ newrelic_license_key }}",
-    "log_level": "info",
-    "log_file_name": "newrelic_unix_plugin.log",
-    "log_file_path": "logs",
-    "log_limit_in_kbytes": 10000
+    "log_level": "{{ newrelic_unix_log_level }}",
+    "log_file_name": "{{ newrelic_unix_log_file_name }}",
+    "log_file_path": "{{ newrelic_unix_log_file_path }}",
+    "log_limit_in_kbytes": {{ newrelic_unix_log_limit_in_kbytes }}
 }

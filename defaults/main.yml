@@ -1,3 +1,7 @@
 ---
 newrelic_unix_artifact_url: https://github.com/sschwartzman/newrelic-unix-plugin/blob/master/dist/newrelic_unix_plugin.tar.gz?raw=true
+newrelic_unix_log_level: info
+newrelic_unix_log_file_name: newrelic_unix_plugin.log
+newrelic_unix_log_file_path: logs
+newrelic_unix_log_limit_in_kbytes: 10000
 newrelic_plugins_home: /opt/newrelic-plugins/
